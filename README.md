@@ -8,14 +8,18 @@ The mathematical calculation of the magnitude of each pixel as a complex number 
 
 For a 1D complex number:
 
-![image](https://github.com/user-attachments/assets/89ad62e8-132f-4cc6-87d5-2deab48a88f5)
-<p align="center"><b>(z = complex number, a = real part, b = imaginary part)</b></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/89ad62e8-132f-4cc6-87d5-2deab48a88f5" width="300">
+</p>
+<p align="center"><i><b>(z = complex number, a = real part, b = imaginary part)</b></i></p>
 
 
 For image 2D complex numbers are used as:
 
-![image](https://github.com/user-attachments/assets/a3e51748-32f4-4f91-b080-db0e4c40737d)
-<p align="center"><b>(F(x,y) = complex number, A(x,y) = real part, B(x,y) = imaginary part)</b></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a3e51748-32f4-4f91-b080-db0e4c40737d" width="300">
+</p>
+<p align="center"><i><b>(F(x,y) = complex number, A(x,y) = real part, B(x,y) = imaginary part)</b></i></p>
 
 
 Overall, the magnitude function computes the magnitude of each complex number in the shifted DFT result of the image. It returns another 2D matrix that has the same size as the DFT matrix and gives the magnitude of the corresponding image. Then, the log transform of magnitude spectrum values is used to get the data to visualize the magnitude spectrum.
@@ -26,9 +30,10 @@ The normalize function provides to scale the image data to a standard range. It 
 
 This operation includes working on each pixel value of an image one by one. For each pixel, it should be estimated by using pixel value, mean, and standard deviation. The approach will be changed depending on whether the image is colorful or not. The new value of the current pixel value should be calculated by subtracting the original pixel value and mean, and then dividing it by the standard deviation. The achieved x’ value will be the normalized x value.
 
-
-![image](https://github.com/user-attachments/assets/3ba30a97-1c49-4238-a55c-4504b683c396)
-<p align="center"><b>(x’ = normalized pixel value, x = current pixel value, μ = mean, σ = standard deviation)</b></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3ba30a97-1c49-4238-a55c-4504b683c396" width="300">
+</p>
+<p align="center"><i><b>(x’ = normalized pixel value, x = current pixel value, μ = mean, σ = standard deviation)</b></i></p>
 
 
 So, to normalize an image the steps should be realized are:
@@ -117,20 +122,28 @@ The ‘normalize_image’ function provides the normalized version of the image 
 However, there is a difference between the application of the function to a colorful image and a grayscale image. If the image is colorful it means that it has 3 channels ‘R,G,B’. That’s why these should be considered one by one. In the grayscale image, there is no third channel. It makes calculations on each pixel for mean and standard deviation. The same process is applied to the colorful image as well. However, it cannot directly calculate for pixels because each pixel has 3 values. That’s why it should consider them one by one. Additionally, the normalized image of a colorful image needs to be scaled by using channel, max, and min values in the normalized image. Otherwise, it does not give the correct version of the normalization even if the calculations are true because of its being colorful.
 The original version of the images used in this project and the result of the functions implemented and OpenCV as the magnitude spectrum of each image and normalized version of each image can be seen compared below respectively. 
 
-![image](https://github.com/user-attachments/assets/f39435bd-4f4e-4bdf-b8d8-29988495e982)
-<p align="center"><b>Figure-1</b></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f39435bd-4f4e-4bdf-b8d8-29988495e982" width="700">
+</p>
+<p align="center"><i><b>Figure-1</b></i></p>
                                       
 
-![image](https://github.com/user-attachments/assets/81686a2d-7e93-48cb-a155-bb8bbc393ec1)
-<p align="center"><b>Figure-2</b></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/81686a2d-7e93-48cb-a155-bb8bbc393ec1" width="700">
+</p>
+<p align="center"><i><b>Figure-2</b></i></p>
 
 
-![image](https://github.com/user-attachments/assets/b9eb7153-d8e0-4470-ad42-ab42fd7c184f)
-<p align="center"><b>Figure-3</b></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b9eb7153-d8e0-4470-ad42-ab42fd7c184f" width="700">
+</p>
+<p align="center"><i><b>Figure-3</b></i></p>
 
 
-![image](https://github.com/user-attachments/assets/24b2befb-1e50-4ce6-b4fa-a712137d64db)
-<p align="center"><b>Figure-4</b></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/24b2befb-1e50-4ce6-b4fa-a712137d64db" width="700">
+</p>
+<p align="center"><i><b>Figure-4</b></i></p>
 
 ## 5. Conclusion
 In conclusion, ready functions are better in terms of performance and memory usage, making them suitable for most applications. But my implementations that are ‘magnitude_spectrum’ and ‘normalize_image’ functions provide correct outputs. In addition, the versions developed provide flexibility on the algorithms as they can be changed, which means they may be better specifically for some applications. For future research and applications, optimizing the functions I have developed and using more developed techniques can improve the performance of the functions in terms of speed and memory. Recognizing both the strengths and limitations of each approach is crucial to making decisions appropriate to different projects. With the improvements to be made, alternatively developed functions may even work better than ready OpenCV solutions and provide more specific solutions to problems.
