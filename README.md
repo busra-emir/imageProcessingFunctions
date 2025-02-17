@@ -1,4 +1,4 @@
-# Image Processing: Magnitude and Normalize Functions as Alternatives of Ready-made OpenCv Functions
+# Image Processing: Magnitude and Normalize Functions as Alternatives of Ready-made OpenCV Functions
 This project focuses on the two functions which are the magnitude and normalize. The magnitude function provides to find the magnitude spectrum of an image by taking the input as the DFT result of an image which is a 2D complex matrix. It calculated the magnitude of each complex number. The normalize function allows to normalization of the given image by setting the mean value of the image to 0 and the standard deviation of the image to 1. These are the alternative forms of OpenCV functions. The mathematical perfectives, approaches, complexities, and results of these functions are examined.
 
 # 1. Mathematical Properties
